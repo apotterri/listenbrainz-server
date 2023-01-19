@@ -254,13 +254,13 @@ if [ $DB_EXISTS -eq 1 ] && [ $DB_RUNNING -eq 1 ] ; then
     bring_up_unit_db
     unit_setup
     echo "Running tests"
-    docker_compose_run listenbrainz env APPMAP=true pytest --trace-config -svv "$@"
+    docker_compose_run listenbrainz pytest -v "$@"
     RET=$?
     unit_dcdown
     exit $RET
 else
     # Else, we have containers, just run tests
     echo "Running tests"
-    docker_compose_run listenbrainz env APPMAP=true pytest --trace-config -svv "$@"
+    docker_compose_run listenbrainz pytest -v "$@"
     exit $?
 fi
