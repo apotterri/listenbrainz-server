@@ -2,7 +2,7 @@ name: ListenBrainz Server Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, appmap_20230110 ]
   pull_request:
     branches: [ '*' ]
     types: [ opened, synchronize, reopened, ready_for_review ]
